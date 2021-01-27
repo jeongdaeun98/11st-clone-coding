@@ -7,7 +7,7 @@
         <a href="javascript:void(0)">로그인</a>
         <div class="flex-space"></div>
         <div class="close-nav"
-             @click="offNav"></div>
+             @click="offNav('LNB')"></div>
       </div>
       <div
           ref="container"
@@ -57,7 +57,7 @@
             ref="outlets"
             class="group outlets">
           <div class="group__title"
-          @click="toggleGroup('outlets')">
+               @click="toggleGroup('outlets')">
             {{ navigations.outlets.title }}
             <div class="toggle-list"></div>
           </div>
@@ -84,17 +84,19 @@
         </a>
       </div>
     </nav>
-    <div v-if="isShowLNB"
-         class="nav-bg"
-         @click="offNav('LNB')"></div>
+    <div
+        v-show="isShowLNB"
+        class="nav-bg"
+        @click="offNav('LNB')"></div>
   </div>
 </template>
 
 <script>
 import _upperFirst from 'lodash/upperFirst'
+import {mapActions} from 'vuex'
 
 export default {
-  data () {
+  data() {
     return {
       navigations: {},
       done: false,
@@ -108,21 +110,21 @@ export default {
     this.init()
   },
   computed: {
-    isShowLNB () {
+    isShowLNB() {
       return this.$store.state.navigation.isShowLNB
     }
   },
   methods: {
-    async init () {
+    ...mapActions('navigation', [
+      'offNav'
+    ]),
+    async init() {
       this.navigations = await this.$fetch({
         requestName: 'navigations'
       })
       this.done = true
     },
-    offNav () {
-      this.$store.dispatch('navigation/offNav')
-    },
-    toggleGroup (name) {
+    toggleGroup(name) {
       const pascalCaseName = _upperFirst(name)
       const computedName = `isShow${pascalCaseName}`
       this.$data[computedName] = !this.$data[computedName]
@@ -194,11 +196,13 @@ nav {
     .group {
       background-color: #fff;
       margin-bottom: 10px;
+
       &__title {
         font-size: 17px;
         font-weight: 700;
         padding: 14px 25px;
         position: relative;
+
         .toggle-list {
           position: absolute;
           top: 0;
@@ -208,6 +212,7 @@ nav {
           display: flex;
           justify-content: center;
           align-items: center;
+
           &::after {
             content: "";
             display: block;
@@ -221,6 +226,7 @@ nav {
           }
         }
       }
+
       &__list {
         li {
           display: flex;
