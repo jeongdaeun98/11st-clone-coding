@@ -2,6 +2,7 @@ export default {
   namespaced: true,
   state: () => ({
     isShowLNB: false,
+    isShowRNB: false
   }),
   //state를 변경하기 위해서는 mutations에서 변경해야함
   mutations: {
@@ -12,14 +13,14 @@ export default {
     }
   },
   actions: {
-    onNav ({ commit }) {
+    onNav ({ commit }, name) {
       commit('updateState', {
-        isShowLNB: true
+        [`isShow${name}`]: true
       })
     },
-    offNav ({ commit }) {
+    offNav ({ commit }, name) {
       commit('updateState', {
-        isShowLNB: false
+        [`isShow${name}`]: false
       })
     }
   }
