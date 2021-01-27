@@ -1,19 +1,19 @@
 <template>
-  <section class="best-product">
+  <section class="todays-chance">
     <div
-        ref="lazyLoadElement"
+        ref="lazy"
         class="inner">
-      <h2>11번가 베스트</h2>
+      <h2>오늘의 찬스</h2>
     </div>
   </section>
 </template>
 
 <script>
-export default {
-  mounted() {
-    this.$lazyLoad(this.$refs.lazyLoadElement)
+  export default {
+    mounted() {
+      this.$lazyLoad(this.$refs.lazy)
+    }
   }
-}
 </script>
 
 <style scoped lang="scss">

@@ -1,9 +1,9 @@
 <template>
-  <section class="best-product">
+  <section class="airlift">
     <div
         ref="lazyLoadElement"
         class="inner">
-      <h2>11번가 베스트</h2>
+      <h2>긴급공수</h2>
     </div>
   </section>
 </template>
@@ -18,9 +18,9 @@ export default {
 
 <style scoped lang="scss">
   section {
+    background-color: #f6f7fb;
     .inner {
-      height: 485px;
-      padding: 50px 0 0;
+      height: 994px;
     }
   }
 </style>
