@@ -1,26 +1,26 @@
 <template>
-  <section class="best-product">
+  <section class="mds-recommendation">
     <div
         ref="lazyLoadElement"
         class="inner">
-      <h2>11번가 베스트</h2>
+      <h2>MD 추천</h2>
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  mounted() {
+  mounted () {
     this.$lazyLoad(this.$refs.lazyLoadElement)
   }
 }
 </script>
 
 <style scoped lang="scss">
-  section {
-    .inner {
-      height: 485px;
-      padding: 50px 0 0;
-    }
+section {
+  background-color: #f6f7fb;
+  .inner {
+    height: 1500px;
   }
+}
 </style>
