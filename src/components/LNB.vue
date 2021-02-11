@@ -6,8 +6,9 @@
       <div class="user">
         <a href="javascript:void(0)">로그인</a>
         <div class="flex-space"></div>
-        <div class="close-nav"
-             @click="offNav('LNB')"></div>
+        <div
+          class="close-nav"
+          @click="offNav('LNB')"></div>
       </div>
       <div
           ref="container"
@@ -37,8 +38,10 @@
             </li>
           </ul>
         </div>
-        <!--Group-->
-        <div class="group major-services">
+
+        <div
+          class="group major-services"
+          @mouseenter="categoryHover = -1">
           <div class="group__title">
             {{ navigations.majorServices.title }}
           </div>
@@ -54,18 +57,21 @@
         </div>
         <!--Group-->
         <div
-            ref="outlets"
-            class="group outlets">
-          <div class="group__title"
-               @click="toggleGroup('outlets')">
+          ref="outlets"
+          class="group outlets"
+          @mouseenter="categoryHover = -1">
+          <div
+            class="group__title"
+            @click="toggleGroup('outlets')">
             {{ navigations.outlets.title }}
             <div class="toggle-list"></div>
           </div>
           <ul
               v-show="isShowOutlets"
               class="group__list">
-            <li v-for="item in navigations.outlets.list"
-                :key="item.name">
+            <li
+              v-for="item in navigations.outlets.list"
+              :key="item.name">
               <a :href="item.href">
                 <img
                     :src="item.src"

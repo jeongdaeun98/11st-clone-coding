@@ -28,7 +28,7 @@
 <script>
 import Swiper from 'swiper/bundle'
 import 'swiper/swiper-bundle.css'
-import ProductCard from "./ProductCard";
+import ProductCard from '~/src/components/ProductCard'
 
 export default {
   components: {

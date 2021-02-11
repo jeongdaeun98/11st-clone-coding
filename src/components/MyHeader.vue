@@ -25,9 +25,9 @@
             <div class="swiper-wrapper">
               <!-- Slides -->
               <div
-                  v-for="(rank,index) in rankings.rankings"
-                  class="swiper-slide"
-                  :key="rank.name">
+                v-for="(rank, index) in rankings.rankings"
+                :key="rank.name"
+                class="swiper-slide">
                 <a :href="rank.href">
                   <span class="index">{{ index + 1 }}</span>
                   <span class="name">{{ rank.name }}</span>
@@ -46,8 +46,9 @@
               <div class="time">
                 {{ referenceDate }} 기준
               </div>
-              <div class="close-wrap"
-                   @click="toggleRankingWrap"></div>
+              <div
+                class="close-wrap"
+                @click="toggleRankingWrap"></div>
             </div>
             <div class="tabs">
               <div
@@ -126,9 +127,10 @@
           <li>
             <a href="javascript:void(0)">T공식대리점</a>
           </li>
-          <li><a
-              href="javascript:void(0)"
-              class="shocking-deal"></a>
+          <li>
+            <a
+              class="shocking-deal"
+              href="javascript:void(0)"></a>
           </li>
         </ul>
       </div>
@@ -140,8 +142,8 @@
 // Swiper.js를 모듈로 활용하는 경우 bundle로 가져와야 함
 import Swiper from 'swiper/bundle'
 //Style을 연결해야 정상적으로 동작
-import dayjs from 'dayjs'
 import 'swiper/swiper-bundle.css'
+import dayjs from 'dayjs'
 import {mapActions} from 'vuex'
 
 export default {

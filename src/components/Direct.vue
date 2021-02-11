@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import {mapActions} from "vuex"
+import { mapActions } from 'vuex'
 
 export default {
   data() {
@@ -52,7 +52,7 @@ export default {
     },
     ...mapActions('navigation', [
       'onNav'
-    ]),
+    ])
   }
 
 }
