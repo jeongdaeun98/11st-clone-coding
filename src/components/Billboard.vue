@@ -8,10 +8,12 @@
           class="swiper-container">
         <div class="swiper-wrapper">
           <div
-              v-for="item in billboards"
-              :key="item.name"
-              class="swiper-slide">
-            <img :data-src="item.src" class="swiper-lazy"/>
+            v-for="item in billboards"
+            :key="item.name"
+            class="swiper-slide">
+            <img
+              :data-src="item.src"
+              class="swiper-lazy" />
             <div class="swiper-lazy-preloader"></div>
           </div>
         </div>
@@ -84,6 +86,7 @@ export default {
             prevEl: '.billboard .prev'
           },
           on: {
+            // 객체 구조 분해 문법 좋아요~
             slideChange: ({realIndex}) => {
               this.$data.currentIndex = realIndex
               this.currentColor = this.billboards[realIndex].color
@@ -113,13 +116,6 @@ export default {
 .billboard {
   transition: background-color 1s;
 }
-
-.inner {
-  width: 1240px;
-  margin: 0 auto;
-  position: relative;
-}
-
 .swiper-container {
   width: 1240px;
   height: 400px;

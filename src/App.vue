@@ -23,6 +23,7 @@
 <script>
 import LNB from "~/src/components/LNB"
 import MyHeader from "~/src/components/MyHeader"
+// 경로 별칭을 쓰는 것을 추천해요~
 import Billboard from "./components/Billboard"
 import Airlift from "./components/Airlift"
 import RNB from "./components/RNB"
@@ -63,5 +64,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import './scss/main';
+// CSS(SCSS)는 큰 따옴표가 권장됩니다~
+@import "./scss/main.scss";
 </style>

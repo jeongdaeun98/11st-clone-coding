@@ -1,8 +1,8 @@
 <template>
   <section class="airlift">
     <div
-        ref="lazyLoadElement"
-        class="inner">
+      ref="lazyLoadElement"
+      class="inner">
       <h2>긴급공수</h2>
     </div>
   </section>

@@ -26,8 +26,8 @@
             </div>
           </div>
           <div
-              class="thumbnail"
-              :style="`background-image: url(${banner.horizontal.thumbnail});`"></div>
+            :style="`background-image: url(${banner.horizontal.thumbnail});`"
+            class="thumbnail"></div>
         </div>
       </a>
     </div>
